@@ -2,6 +2,11 @@ name: 01-1. GitHub Actions Demo
 on: 
   workflow_dispatch:
   workflow_call:
+push:
+  branches:
+    - main
+  paths:
+    - 'labs/**'
 
 jobs:
   Explore-GitHub-Actions:
@@ -20,9 +25,5 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Adding markdown
         run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
-    push:
-      branches:
-        - main
-      paths:
-        - 'labs/**'
+
 
